@@ -1,0 +1,15 @@
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+body {
+    background-image: url('background.jpg');
+}
+
+button {
+    text-align: center;
+}
