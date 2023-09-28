@@ -1,5 +1,6 @@
-.container {
+body {
     text-align: center;
+    margin-top: 50px;
 }
 
 h1 {
@@ -12,4 +13,11 @@ body {
 
 button {
     text-align: center;
+    margin-top: 25px;
+}
+
+
+
+.hidden {
+    display: none;
 }

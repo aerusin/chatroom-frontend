@@ -6,20 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatroom Frontend</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/10.3.1/firebase-app-compat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/10.3.1/firebase-auth-compat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/10.3.1/firebase-database-compat.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Chatrooms</h1>
-        <div class="join">
-            <input type="text">
-            <button>Enter</button>
+    <section id="homepage">
+        <h1 id="room-status">Join or create a room!</h1>
+        <div class="container">
+            <input type="text" id="room-id" placeholder="Enter your room code">
+            <button onclick="checkRoom()">Join</button>
         </div>
         <div>
-            <button>Create Room</button>
+            <button onclick="createRoom()">Create Room</button>
         </div>
-        <ul id="chatroom-list"></ul>
-    </div>
+        <div id="messages"></div>
+        <div id="statusMessage"></div>
+    </section>
     <script src="script.js"></script>
 </body>
 
