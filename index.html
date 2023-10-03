@@ -1,30 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chatroom Frontend</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/10.3.1/firebase-app-compat.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/10.3.1/firebase-auth-compat.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/10.3.1/firebase-database-compat.js"></script>
-</head>
+  </head>
 
-<body>
-    <section id="homepage">
+  <body>
+    <div id="logged-in-content" class="hidden">
+      <div id="homepage">
+        <button id="logoutButton">Logout</button>
         <h1 id="room-status">Join or create a room!</h1>
         <div class="container">
-            <input type="text" id="room-id" placeholder="Enter your room code">
-            <button onclick="checkRoom()">Join</button>
+          <input type="text" id="room-id" placeholder="Enter your room code" />
+          <button onclick="checkRoom()">Join</button>
+          <div id="joinable-rooms"></div>
         </div>
         <div>
-            <button onclick="createRoom()">Create Room</button>
+          <button onclick="createRoom()">Create Room</button>
         </div>
         <div id="messages"></div>
         <div id="statusMessage"></div>
-    </section>
-    <script src="script.js"></script>
-</body>
+      </div>
+      <div id="room-display" class="hidden">
+        <h1 id="room-header"></h1>
+        <div id="room-messages"></div>
+        <input
+          type="text"
+          placeholder="Enter Message Here"
+          id="message-input"
+        />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+    <div id="logged-out-content">
+      <h3>Login</h3>
+      <input type="email" id="email" placeholder="Email" />
+      <input type="password" id="password" placeholder="Password" />
+      <button id="loginButton">Login</button>
+      <button id="signupButton">Sign Up</button>
+      <p id="authError"></p>
+      <!-- To display authentication errors -->
+    </div>
 
+    <script src="/script.js"></script>
+  </body>
 </html>
